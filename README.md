@@ -1,1 +1,1 @@
-# js-diplom
+# https://ninoxin.github.io/js-diplom/
