@@ -1,34 +1,38 @@
 const calc = () => {
-    const calcBlock = document.getElementById('calc')
-    const calcType = document.getElementById('calc-type')
-    const calcTypeMaterial = document.getElementById('calc-type-material')
-    const calcInput = document.getElementById('calc-input')
-    const calcTotal = document.getElementById('calc-total')
 
-    const countCalc = () => {
-        const calcTypeValue = +calcType.options[calcType.selectedIndex].value
-        const calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value
-        const calcInputValue = +calcInput.value
+    if (document.body.className == 'balkony'){
+        const calcBlock = document.getElementById('calc')
+        const calcType = document.getElementById('calc-type')
+        const calcTypeMaterial = document.getElementById('calc-type-material')
+        const calcInput = document.getElementById('calc-input')
+        const calcTotal = document.getElementById('calc-total')
 
-        let totalValue = 0
+        const countCalc = () => {
+            const calcTypeValue = +calcType.options[calcType.selectedIndex].value
+            const calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value
+            const calcInputValue = +calcInput.value
+
+            let totalValue = 0
 
 
-        if (calcType.value && calcTypeMaterial.value && calcInput) {
+            if (calcType.value && calcTypeMaterial.value && calcInput) {
 
-            totalValue = calcTypeValue * calcTypeMaterialValue * calcInputValue
+                totalValue = calcTypeValue * calcTypeMaterialValue * calcInputValue
 
-        } else {
-            totalValue = 0
+            } else {
+                totalValue = 0
+            }
+
+            calcTotal.value = Math.round(totalValue)
+
         }
 
-        calcTotal.value = Math.round(totalValue)
-
+        calcBlock.addEventListener('input', (e) => {
+            if (e.target === calcType || e.target === calcTypeMaterial || e.target === calcInput) {
+                countCalc()
+            }
+        })
     }
     
-    calcBlock.addEventListener('input', (e) => {
-        if (e.target === calcType || e.target === calcTypeMaterial || e.target === calcInput) {
-            countCalc()
-        }
-    })
 }
 export default calc
