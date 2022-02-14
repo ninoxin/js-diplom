@@ -1,3 +1,5 @@
+import { animate } from "./helper"
+
 const modal = () => {
     const doc = document.querySelector('body')
     const modalTel = document.querySelector('.header-modal--opened')
@@ -6,13 +8,37 @@ const modal = () => {
     const overlay = document.querySelector('.overlay')
     
     const openModal = (elem) => {
-        elem.style.display = 'block'
-        overlay.style.display = 'block' 
+        elem.style.display = 'block';
+        overlay.style.display = 'block';
+        animate({
+            duration: 600,
+            timing(timeFraction) {
+                return timeFraction;
+            },
+            draw(progress) {
+                elem.style.opacity = progress;
+                elem.style.top = 50 * progress + "%";
+            },
+        })
     }
     const closeModal = (elem) =>{
-        elem.style.display = 'none'
-        overlay.style.display = 'none'
+        overlay.style.display = 'none';
+        animate({
+            duration: 300,
+            timing(timeFraction) {
+                return Math.sin(Math.acos(timeFraction));
+            },
+            draw(progress) {
+                elem.style.opacity = progress
+                if (progress === 0) {
+                    elem.style.display = none
+                    overlay.style.display = none
+                }
+            }
+        })
     }
+
+
 
     doc.addEventListener('click', (e) =>{
         if(e.target.closest('a[href="#callback"]')){
