@@ -39,6 +39,9 @@ h3 {
 .img-responsive {
   display: inline-block;
 }
+.img-sert{
+  width: 85%;
+}
 .phone-icon {
   background: url("../images/phone.png") no-repeat;
   display: inline-block;
@@ -1533,6 +1536,9 @@ input.error {
 .services-modal {
   display: none;
 }
+.sert-modal{
+  display: none;
+}
 
 .services-modal--opened {
   position: fixed;
@@ -1542,7 +1548,15 @@ input.error {
   z-index: 9999;
 }
 
+
 .header-modal--opened {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.sert-modal--opened{
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1572,6 +1586,13 @@ input.error {
 
 .services-modal__close:hover {
   color: rgba(0, 0, 0, 0.35);
+}
+.sert-modal {
+  max-width: 450px;
+  width: 100%;
+}
+.sert-close{
+  right: 40px;
 }
 
 .overlay {

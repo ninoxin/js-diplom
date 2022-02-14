@@ -15,7 +15,7 @@ const calc = () => {
             let totalValue = 0
 
 
-            if (calcType.value && calcTypeMaterial.value && calcInput) {
+            if (calcType.value && calcTypeMaterial.value && calcInput.value) {
 
                 totalValue = calcTypeValue * calcTypeMaterialValue * calcInputValue
 
