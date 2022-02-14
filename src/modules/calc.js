@@ -21,7 +21,8 @@ const calc = () => {
             totalValue = 0
         }
 
-        calcTotal.value = totalValue
+        calcTotal.value = Math.round(totalValue)
+
     }
     
     calcBlock.addEventListener('input', (e) => {
