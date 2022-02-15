@@ -33,19 +33,6 @@ const sert = () => {
     sertClose.addEventListener('click', () =>{
         sertModal.style.display = 'none'
         overlay.style.display = 'none'
-        nimate({
-            duration: 300,
-            timing(timeFraction) {
-                return Math.sin(Math.acos(timeFraction));
-            },
-            draw(progress) {
-                elem.style.opacity = progress
-                if (progress === 0) {
-                    elem.style.display = none
-                    overlay.style.display = none
-                }
-            }
-        })
     })
 
 }
