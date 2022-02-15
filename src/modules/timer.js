@@ -1,8 +1,7 @@
 const timer = (deadline) => {
-    const timerDays = document.querySelector('.count_1 > span')
-    const timerHours = document.querySelector('.count_2 > span')
-    const timerMinutes = document.querySelector('.count_3 > span')
-    const timerSeconds = document.querySelector('.count_4 > span')
+
+    const timers = document.querySelectorAll('.order')
+
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime()
@@ -20,10 +19,17 @@ const timer = (deadline) => {
     
     const updateClock = () => {
         let getTime = getTimeRemaining()
-        timerDays.textContent =  ("0" + getTime.days).slice(-2);
-        timerHours.textContent = ("0" + getTime.hours).slice(-2);
-        timerMinutes.textContent = ("0" + getTime.minutes).slice(-2);
-        timerSeconds.textContent = ("0" + getTime.seconds).slice(-2);
+        timers.forEach(timer => {
+            const timerDays = timer.querySelector('.count_1 > span')
+            const timerHours = timer.querySelector('.count_2 > span')
+            const timerMinutes = timer.querySelector('.count_3 > span')
+            const timerSeconds = timer.querySelector('.count_4 > span')
+
+            timerDays.textContent =  ("0" + getTime.days).slice(-2);
+            timerHours.textContent = ("0" + getTime.hours).slice(-2);
+            timerMinutes.textContent = ("0" + getTime.minutes).slice(-2);
+            timerSeconds.textContent = ("0" + getTime.seconds).slice(-2);
+        })
  
     }          
 
