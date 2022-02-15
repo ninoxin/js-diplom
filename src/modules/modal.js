@@ -23,19 +23,7 @@ const modal = () => {
     }
     const closeModal = (elem) =>{
         overlay.style.display = 'none';
-        animate({
-            duration: 300,
-            timing(timeFraction) {
-                return Math.sin(Math.acos(timeFraction));
-            },
-            draw(progress) {
-                elem.style.opacity = progress
-                if (progress === 0) {
-                    elem.style.display = none
-                    overlay.style.display = none
-                }
-            }
-        })
+        elem.style.display = 'none';
     }
 
 
