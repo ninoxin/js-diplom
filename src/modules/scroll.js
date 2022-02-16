@@ -25,6 +25,7 @@ const scroll = () => {
         }
     })
     
+
     scroll.addEventListener('click', scrollTo);
 
 }
