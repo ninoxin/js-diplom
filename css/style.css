@@ -230,6 +230,9 @@ input.error {
 .navbar-order {
   float: right;
 }
+.no-active{
+  display: none;
+}
 #navigation-fixed .navbar-brand {
   padding: 0;
   margin: 0px 60px 0px 0px;
@@ -1615,7 +1618,7 @@ input.error {
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
+  max-width: 200px;
 }
 
 .benefits-arrows {
@@ -1692,6 +1695,6 @@ input.error {
 @media (min-width: 768px) {
   .benefits-wrap {
     width: 100%;
-    max-width: 576px;
+    max-width: 666px;
   }
 }
