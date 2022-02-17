@@ -40,7 +40,7 @@ h3 {
   display: inline-block;
 }
 .img-sert{
-  width: 85%;
+  width: 100%;
 }
 .phone-icon {
   background: url("../images/phone.png") no-repeat;
@@ -1595,7 +1595,11 @@ input.error {
   width: 100%;
 }
 .sert-close{
-  right: 40px;
+  display: flex;
+  right: 25px;
+  top: 20px;
+  text-align: center;
+  justify-content: center;
 }
 
 .overlay {

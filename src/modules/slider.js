@@ -1,7 +1,7 @@
 const slider = () => {
     
     const sliderBlocks = document.querySelectorAll('.slider')
-    
+
     
     const getToSlide = (sliderBlock) => {
         const sliderAll = document.querySelectorAll(`.${sliderBlock.id}__item`);
@@ -31,10 +31,8 @@ const slider = () => {
         })
     }
 
-
     sliderBlocks.forEach((sliderBlock) => {
         sliderBlock.addEventListener('click', (e) => {
-
 
             let slides = getToSlide(sliderBlock).slides
             let currentSlide = 0
@@ -42,7 +40,7 @@ const slider = () => {
             if (!e.target.closest('.arrows')) {
                 return
             }
-            
+           
             prevSlide(slides, currentSlide, 'no-active')
 
             if (e.target.closest('.benefits__arrow--right') || e.target.closest('.services__arrow--right')) {
@@ -55,7 +53,7 @@ const slider = () => {
             }
             if (currentSlide < 0) {
                 currentSlide = slides.length - 1
-            }
+            }        
             
             nextSlide(slides, currentSlide, 'no-active')
         })
