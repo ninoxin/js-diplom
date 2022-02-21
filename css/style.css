@@ -39,6 +39,9 @@ h3 {
 .img-responsive {
   display: inline-block;
 }
+.img-sert{
+  width: 100%;
+}
 .phone-icon {
   background: url("../images/phone.png") no-repeat;
   display: inline-block;
@@ -226,6 +229,9 @@ input.error {
 }
 .navbar-order {
   float: right;
+}
+.no-active{
+  display: none;
 }
 #navigation-fixed .navbar-brand {
   padding: 0;
@@ -1533,6 +1539,9 @@ input.error {
 .services-modal {
   display: none;
 }
+.sert-modal{
+  display: none;
+}
 
 .services-modal--opened {
   position: fixed;
@@ -1542,7 +1551,15 @@ input.error {
   z-index: 9999;
 }
 
+
 .header-modal--opened {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.sert-modal--opened{
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1573,6 +1590,17 @@ input.error {
 .services-modal__close:hover {
   color: rgba(0, 0, 0, 0.35);
 }
+.sert-modal {
+  max-width: 450px;
+  width: 100%;
+}
+.sert-close{
+  display: flex;
+  right: 25px;
+  top: 20px;
+  text-align: center;
+  justify-content: center;
+}
 
 .overlay {
   display: none;
@@ -1594,7 +1622,7 @@ input.error {
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
+  max-width: 200px;
 }
 
 .benefits-arrows {
@@ -1655,6 +1683,7 @@ input.error {
 }
 
 .smooth-scroll {
+  display: none;
   position: fixed;
   right: 25px;
   bottom: 25px;
@@ -1671,6 +1700,6 @@ input.error {
 @media (min-width: 768px) {
   .benefits-wrap {
     width: 100%;
-    max-width: 576px;
+    max-width: 666px;
   }
 }
