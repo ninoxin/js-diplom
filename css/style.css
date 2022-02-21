@@ -313,7 +313,6 @@ input.error {
   background-repeat: no-repeat;
   height: 16px;
   display: inline-block;
-  float: left;
   margin-right: 9px;
 }
 .menu-window {
@@ -831,7 +830,6 @@ p.services-image_mobile {
   width: 30px;
   height: 30px;
   display: inline-block;
-  float: left;
   margin-right: 15px;
 }
 .contact-phone {
