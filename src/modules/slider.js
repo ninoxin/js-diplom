@@ -1,3 +1,5 @@
+import { animate } from "./helper"
+
 const slider = () => {
     
     const sliderBlocks = document.querySelectorAll('.slider')
@@ -22,12 +24,30 @@ const slider = () => {
     const prevSlide = (slides, index, strClass) => {
         slides[index].forEach(slide => {
             slide.classList.add(strClass)
+            animate({
+                duration: 800,
+                timing(timeFraction) {
+                    return timeFraction;
+                },
+                draw(progress) {
+                    slide.style.opacity = progress;
+                },
+            })
         })
     }
 
     const nextSlide = (slides, index, strClass) => {
         slides[index].forEach(slide => {
             slide.classList.remove(strClass)
+            animate({
+                duration: 800,
+                timing(timeFraction) {
+                    return timeFraction;
+                },
+                draw(progress) {
+                    slide.style.opacity = progress;
+                },
+            })
         })
     }
 
@@ -45,6 +65,7 @@ const slider = () => {
 
             if (e.target.closest('.benefits__arrow--right') || e.target.closest('.services__arrow--right')) {
                 currentSlide++;
+                
             } else if (e.target.closest('.benefits__arrow--left') || e.target.closest('.services__arrow--left')) {
                 currentSlide--;
             }

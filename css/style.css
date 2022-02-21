@@ -232,6 +232,7 @@ input.error {
 }
 .no-active{
   display: none;
+  opacity: 0;
 }
 #navigation-fixed .navbar-brand {
   padding: 0;
