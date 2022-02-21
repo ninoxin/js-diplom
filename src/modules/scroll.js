@@ -1,32 +1,15 @@
 const scroll = () => {
-    const scroll = document.querySelector('.smooth-scroll__img')
-
-    const heightScroll = () => {
-        let scrolled = window.pageYOffset;
-        
-        if (scrolled > 2) {
-            scroll.style.display = 'block'
-        }
-        if (!scrolled) {
-            scroll.style.display = 'none'
-        }
-    }
-
-    const scrollTo = () => {
-        if (window.pageYOffset > 0) {
-            window.scrollBy(0, -10);
-            setTimeout(scrollTo, 0);
-          }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        if (window.pageYOffset < 400) {
-            window.addEventListener('scroll', heightScroll);
-        }
-    })
+    const scroll = document.querySelector('.smooth-scroll'); 
+    let counter = 0 
     
-
-    scroll.addEventListener('click', scrollTo);
+    window.addEventListener('scroll', () => { 
+        if (window.pageYOffset < 200) { 
+            scroll.style.display = "none" 
+            counter++ 
+        } if (window.pageYOffset > 500 && counter > 0) { 
+            scroll.style.display = "block" 
+        } }) 
+        scroll.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: "smooth" }) }) 
 
 }
 export default scroll
